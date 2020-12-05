@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/node_modules/.cache/gh-pages/github.com!it-kamasutra!react-way-of-samurai.git" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/node_modules/.cache/gh-pages/github.com!mip92!socialNetwork.git" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/react-way-of-samurai" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/socialNetwork" vcs="Git" />
+  </component>
+</project>

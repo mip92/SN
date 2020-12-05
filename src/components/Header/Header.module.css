@@ -1,0 +1,21 @@
+.header {
+    grid-area: h;
+    background-color: green;
+}
+
+.header img {
+    width: 56px;
+}
+
+.loginBlock {
+    float: right;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+}
+.item {
+    align-self: center;
+    justify-self: center;
+}

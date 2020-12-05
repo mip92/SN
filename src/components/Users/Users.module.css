@@ -1,0 +1,44 @@
+.userPhoto{
+    width: 100px;
+    border-radius:50px;
+}
+.name {
+    grid-area: nm;
+    border: 2px solid #483d8b;
+    padding: 1em;
+}
+.button {
+    grid-area: bu;
+}
+.status {
+    grid-area: st;
+    border: 2px solid #483d8b;
+    padding: 1em;
+}
+.photo {
+    grid-area: ph;
+}
+.city{
+    grid-area: ci;
+    border: 2px solid #483d8b;
+    padding: 1em;
+}
+.country{
+    grid-area: co;
+    border: 2px solid #483d8b;
+    padding: 1em;
+}
+.wrapper {
+    display: grid;
+    margin: 20px;
+    grid-template-columns: 140px repeat( 8, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    grid-template-areas:
+            "ph nm nm nm   nm   nm   nm   ci   ci"
+            "ph st st st st st st co   co"
+            "bu bu bu bu   bu   bu   bu   bu   ft";
+}
+.selectedPage{
+ font-weight: bold;
+}
+
