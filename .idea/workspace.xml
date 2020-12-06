@@ -24,97 +24,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/precache-manifest.fb2cf0769eea0156c15ed118cd0edf8a.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/gh-pages/github.com!mip92!SN.git" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/gh-pages/github.com!mip92!SN.git" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/bin/gh-pages-clean.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/bin/gh-pages.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/changelog.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/lib/git.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/lib/util.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-cache-dir/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-cache-dir/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-cache-dir/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-cache-dir/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-up/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-up/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-up/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-up/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/find-up/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/copy-sync/copy-sync.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/copy-sync/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/copy/copy.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/copy/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/empty/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/ensure/file.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/ensure/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/ensure/link.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/ensure/symlink-paths.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/ensure/symlink-type.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/ensure/symlink.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/fs/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/json/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/json/jsonfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/json/output-json-sync.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/json/output-json.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/mkdirs/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/mkdirs/mkdirs-sync.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/mkdirs/mkdirs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/mkdirs/win32.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/move-sync/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/move-sync/move-sync.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/move/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/move/move.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/output/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/path-exists/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/remove/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/remove/rimraf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/util/buffer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/util/stat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/lib/util/utimes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/fs-extra/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/globby/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/globby/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/globby/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/globby/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/locate-path/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/locate-path/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/locate-path/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/locate-path/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/locate-path/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/make-dir/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/make-dir/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/make-dir/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/make-dir/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/make-dir/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/p-locate/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/p-locate/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/p-locate/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/p-locate/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/p-locate/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/path-exists/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/path-exists/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/path-exists/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/path-exists/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/path-exists/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pify/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pify/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pify/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pify/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pkg-dir/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pkg-dir/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pkg-dir/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pkg-dir/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/node_modules/pkg-dir/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/gh-pages/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,6 +250,8 @@
       <workItem from="1607181852079" duration="5039000" />
       <workItem from="1607190714027" duration="1297000" />
       <workItem from="1607192350974" duration="4068000" />
+      <workItem from="1607197653752" duration="1583000" />
+      <workItem from="1607247883687" duration="446000" />
     </task>
     <task id="LOCAL-00002" summary="add app">
       <created>1607022171192</created>
