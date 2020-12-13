@@ -22,9 +22,8 @@
   <component name="ChangeListManager">
     <list default="true" id="add8a780-ed57-4242-93b1-39c821ced075" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profileReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +257,7 @@
       <workItem from="1607778874640" duration="14234000" />
       <workItem from="1607851613425" duration="10479000" />
       <workItem from="1607891254458" duration="383000" />
-      <workItem from="1607892045463" duration="852000" />
+      <workItem from="1607892045463" duration="1687000" />
     </task>
     <task id="LOCAL-00002" summary="add app">
       <created>1607022171192</created>

@@ -142,4 +142,6 @@ export const sendForm = (aboutMe, fullName, github, vk, facebook, instagram, twi
         dispatch(stopSubmit('profeleData', {_error: data.messages[0]}));
        return Promise.reject(data.messages[0]);
     }
+
+    
 };
