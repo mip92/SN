@@ -20,7 +20,22 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="add8a780-ed57-4242-93b1-39c821ced075" name="Default Changelist" comment="" />
+    <list default="true" id="add8a780-ed57-4242-93b1-39c821ced075" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Contact/Contact.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Contact/Contact.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileDataForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileStatus/ProfileStatus.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileStatus/ProfileStatus.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProfileStatus/ProfileStatusWithHooks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProfileStatus/ProfileStatusWithHooks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormControls/FormControls.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormControls/FormControls.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profileReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sidebarReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebarReducer.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/hoc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,17 +82,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\react-way-of-samurai\src\hoc" />
-      <recent name="D:\react-way-of-samurai\src\components\ProfileStatus" />
-      <recent name="D:\react-way-of-samurai\src\components\Users" />
-      <recent name="D:\react-way-of-samurai\src\redux" />
-      <recent name="D:\react-way-of-samurai\src\components\common\FormControls" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\react-way-of-samurai\src\components\common\Paginator" />
       <recent name="D:\react-way-of-samurai\src\components\common\Preloader" />
       <recent name="D:\react-way-of-samurai\src\components\Dialogs\DialogItem\Avatar" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\SN\src\components\Profile\ProfileInfo" />
+      <recent name="C:\SN\src\components" />
+      <recent name="D:\react-way-of-samurai\src\hoc" />
+      <recent name="D:\react-way-of-samurai\src\components\ProfileStatus" />
+      <recent name="D:\react-way-of-samurai\src\components\Users" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.ProfileStatus component.callback should be called">
@@ -244,7 +259,14 @@
       <workItem from="1607190714027" duration="1297000" />
       <workItem from="1607192350974" duration="4068000" />
       <workItem from="1607197653752" duration="1583000" />
-      <workItem from="1607247883687" duration="4938000" />
+      <workItem from="1607247883687" duration="21811000" />
+      <workItem from="1607363630491" duration="366000" />
+      <workItem from="1607364108492" duration="41000" />
+      <workItem from="1607364391595" duration="13127000" />
+      <workItem from="1607533413190" duration="10164000" />
+      <workItem from="1607704957627" duration="14621000" />
+      <workItem from="1607778874640" duration="14234000" />
+      <workItem from="1607851613425" duration="10479000" />
     </task>
     <task id="LOCAL-00002" summary="add app">
       <created>1607022171192</created>
@@ -276,6 +298,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="add app" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="234" y="340" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607792140419">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="234" y="340" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1607792140419" />
     <state x="839" y="554" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607183448217">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -368,10 +394,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="532" y="407" key="SimpleOpenTaskDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604508882781" />
-    <state x="938" y="219" key="run.anything.popup" timestamp="1603303053685">
+    <state x="938" y="219" key="run.anything.popup" timestamp="1607539541241">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="938" y="219" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603303053685" />
+    <state x="938" y="219" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607539541241" />
+    <state x="1320" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1607277539594">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1320" y="319" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607277539594" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -385,6 +415,11 @@
           <url>file://$PROJECT_DIR$/src/components/ProfileStatus/ProfileStatusWithHooks.test.jsx</url>
           <line>43</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx</url>
+          <line>79</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

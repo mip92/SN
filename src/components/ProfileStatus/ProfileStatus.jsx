@@ -33,7 +33,6 @@ class ProfileStatus extends React.Component {
         if (prevProps.status !== this.props.status) {
             this.setState({status: this.props.status})
         }
-        debugger;
         let p = this.props;
         let s = this.state;
         console.log('1')

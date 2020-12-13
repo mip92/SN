@@ -38,6 +38,19 @@ const CreateField = (placeholder, name, validate, component, type, text="") => {
         </div>
     )
 }
+const CreateFieldForProfile = (placeholder, name, validate, component, type, text="", value) => {
+    return (
+        <span>
+            <Field placeholder={placeholder}
+                   component={component}
+                   name={name}
+                   validate={validate}
+                   type={type}
+                   value={value}
+            />{text}
+        </span>
+    )
+}
 
-export {Textarea, Input, CreateField}
+export {Textarea, Input, CreateField, CreateFieldForProfile}
 

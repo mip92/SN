@@ -14,7 +14,7 @@ let initialState= {
         {
             id: 7,
             name: 'Sergey',
-            ava: "https://funart.pro/uploads/posts/2020-05/1588322095_32-p-nyashnie-foni-na-rabochii-stol-69.png"
+            ava: "https://klike.net/uploads/posts/2020-06/1591514917_7.jpg"
         },
         {
             id: 8,
