@@ -143,5 +143,5 @@ export const sendForm = (aboutMe, fullName, github, vk, facebook, instagram, twi
        return Promise.reject(data.messages[0]);
     }
 
-    
+
 };
