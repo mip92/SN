@@ -21,8 +21,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="add8a780-ed57-4242-93b1-39c821ced075" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/common/Error/Error404.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Error/Error404.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileDataForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileDataForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/appReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/appReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/profileReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profileReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +72,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Profile/ProfileInfo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/common/Paginator" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -71,17 +85,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\SN\src\components\common\Paginator" />
+      <recent name="C:\SN\src\components\common" />
+      <recent name="C:\SN\src\components\Profile\ProfileInfo" />
+      <recent name="C:\SN\src\components" />
+      <recent name="D:\react-way-of-samurai\src\hoc" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\react-way-of-samurai\src\components\common\Paginator" />
       <recent name="D:\react-way-of-samurai\src\components\common\Preloader" />
       <recent name="D:\react-way-of-samurai\src\components\Dialogs\DialogItem\Avatar" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\SN\src\components\Profile\ProfileInfo" />
-      <recent name="C:\SN\src\components" />
-      <recent name="D:\react-way-of-samurai\src\hoc" />
-      <recent name="D:\react-way-of-samurai\src\components\ProfileStatus" />
-      <recent name="D:\react-way-of-samurai\src\components\Users" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.ProfileStatus component.callback should be called">
@@ -164,7 +178,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -257,7 +271,18 @@
       <workItem from="1607778874640" duration="14234000" />
       <workItem from="1607851613425" duration="10479000" />
       <workItem from="1607891254458" duration="383000" />
-      <workItem from="1607892045463" duration="2017000" />
+      <workItem from="1607892045463" duration="4065000" />
+      <workItem from="1607969811955" duration="3919000" />
+      <workItem from="1608139171784" duration="8023000" />
+      <workItem from="1608230806031" duration="8841000" />
+      <workItem from="1608311334829" duration="8598000" />
+      <workItem from="1608389727721" duration="2852000" />
+      <workItem from="1608454918861" duration="9000" />
+      <workItem from="1608455472175" duration="25000" />
+      <workItem from="1608455525030" duration="5000" />
+      <workItem from="1608457345748" duration="786000" />
+      <workItem from="1608458146510" duration="3683000" />
+      <workItem from="1608569218786" duration="1287000" />
     </task>
     <task id="LOCAL-00002" summary="add app">
       <created>1607022171192</created>
@@ -270,7 +295,7 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -385,14 +410,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="532" y="407" key="SimpleOpenTaskDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1604508882781" />
-    <state x="938" y="219" key="run.anything.popup" timestamp="1607539541241">
+    <state x="674" y="608" key="run.anything.popup" timestamp="1608143934417">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="938" y="219" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607539541241" />
-    <state x="1320" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1607277539594">
+    <state x="674" y="608" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608143934417" />
+    <state x="671" y="562" width="672" height="678" key="search.everywhere.popup" timestamp="1608142994488">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1320" y="319" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1607277539594" />
+    <state x="671" y="562" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608142994488" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -406,11 +431,6 @@
           <url>file://$PROJECT_DIR$/src/components/ProfileStatus/ProfileStatusWithHooks.test.jsx</url>
           <line>43</line>
           <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Profile/ProfileInfo/ProfileInfo.jsx</url>
-          <line>79</line>
-          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

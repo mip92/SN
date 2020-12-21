@@ -1,63 +1,72 @@
-import s from "../../Users/Users.module.css";
+import s from "../Paginator/Paginator.module.css";
 import React, {useEffect, useState} from "react";
 import DialogItem from "../../Dialogs/DialogItem/DialogItem";
+import {Field, reduxForm} from "redux-form";
+import {Textarea} from "../FormControls/FormControls";
+import {maxLengthCreator, requiredField} from "../../../utils/validators/validators";
 
-
-/*export let Paginator = (props) => {
+const Paginator = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
     let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
-    let startOfBlock=1;
-    let endOfBlock=10;
-    let someBlock = pages.filter(item => item <= endOfBlock && item >= startOfBlock);
-    //{startOfBlock && <span>prv</span>}
+    let thispage = 1;
 
-    return (
-        <div>
-            {startOfBlock!=1 && <span>Previous</span>}
-            {someBlock.map((d) => <span onClick={() => {props.onPageChanged(d)}}> {d} </span>)}
-            {endOfBlock!=pages.length && <span onClick={() => {props.onPageChanged(d)}}>Next</span>}
-        </div>
-    )*/
-    const Paginator = (props) => {
-        let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-        let pages = [];
-        for (let i = 1; i <= pagesCount; i++) {
-            pages.push(i)
-        }
-       // let newPages = pages.filter(item => item <= 0 && item >= pages.length)
-        //alert(pages.length)
-       //let startOfBlock=1;
-        //let endOfBlock=10;
+    let [startOfBlock, setStartOfBlock] = useState(startOfBlock = 1)
+    let [endOfBlock, setEndOfBlock] = useState(endOfBlock = 10)
+    let [someBlock, editSomeBlock] = useState(someBlock = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
-        let [startOfBlock, setStartOfBlock] = useState(startOfBlock=1)
-        let [endOfBlock, setEndOfBlock] = useState(endOfBlock=10)
-        let [someBlock,editSomeBlock]=useState(someBlock=[1,2,3,4,5,6,7,8,9,10])
-
-        let next=()=>{
-            setEndOfBlock(endOfBlock+=10);
-            setStartOfBlock(startOfBlock+=10)
-            let newPages=pages.filter(item => item <=endOfBlock  && item >= startOfBlock);
-            editSomeBlock(newPages);
-        }
-        let prev=()=>{
-            setEndOfBlock(endOfBlock-=10);
-            setStartOfBlock(startOfBlock-=10)
-            let newPages=pages.filter(item => item <=endOfBlock  && item >= startOfBlock);
-            editSomeBlock(newPages);
-        }
-
+    let next = () => {
+        setEndOfBlock(endOfBlock += 10);
+        setStartOfBlock(startOfBlock += 10)
+        let newPages = pages.filter(item => item <= endOfBlock && item >= startOfBlock);
+        editSomeBlock(newPages);
+    }
+    let prev = () => {
+        setEndOfBlock(endOfBlock -= 10);
+        setStartOfBlock(startOfBlock -= 10)
+        let newPages = pages.filter(item => item <= endOfBlock && item >= startOfBlock);
+        editSomeBlock(newPages);
+    }
+    const onSubmit = (formData) => {
+        props.onPageChanged(formData.searchPage)
+    }
+    const maxLength4 = maxLengthCreator(4)
+    const searchPage = (props) => {
         return (
-            <div>
-                {startOfBlock!=1 && <span onClick={prev}>Previous</span>}
-                {someBlock.map((d) => <span onClick={() => {props.onPageChanged(d)}}> {d} </span>)}
-                {endOfBlock!=pages.length && <span onClick={next}>Next</span>}
-            </div>
+            <form onSubmit={props.handleSubmit}>
+                <div>
+                    <Field component={Textarea} name={'searchPage'} validate={[requiredField, maxLength4]}
+                           placeholder={'Введите страницу'}/>
+                </div>
+                <div>
+                    <button>Поиск страницы</button>
+                </div>
+            </form>
         )
     }
-    export default Paginator;
+    const SearchPageForm = reduxForm({
+        form: "searchPage"
+    })(searchPage);
+    debugger
+    return (
+        <div>
+            <div>
+                {startOfBlock != 1 && <span onClick={prev} className={s.notActive}>Previous</span>}
+                {someBlock.map((d) => <span onClick={() => {
+                    props.onPageChanged(d)
+                }} className={props.currentPage == d ? s.current : s.notActive}> {d} </span>)}
+                {endOfBlock != pages.length && <span onClick={next} className={s.notActive}>Next</span>}
+            </div>
+            <div>
+                Введите номер страницы
+                <SearchPageForm initialValues={{value: props.currentPage}} onSubmit={onSubmit}/>
+            </div>
+        </div>
+    )
+}
+export default Paginator;
 /*
 
 

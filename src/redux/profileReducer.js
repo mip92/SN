@@ -1,5 +1,6 @@
 import {authAPI, profileAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
+import {thunkLetError} from "./appReducer";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET-USER-PROFILE";
@@ -69,12 +70,10 @@ export const setStatus = (status) => {
     }
 };
 const setUserProfile = (profile) => {
-    debugger
     return {type: SET_USER_PROFILE, profile}
 };
 
 const updateProfile = (aboutMe, contacts, lookingForAJobDescription, lookingForAJob) => {
-    debugger
     return {type: UPDATE_PROFILE, aboutMe, contacts, lookingForAJobDescription, lookingForAJob}
 };
 
@@ -91,10 +90,15 @@ export const getStatus = (userId) => async (dispatch) => {
     else dispatch(setStatus(data));
 }
 export const updateStatus = (status) => async (dispatch) => {
-    let data = await profileAPI.updateStatus(status)
-    if (data.resultCode == 0) {
-        dispatch(setStatus(status));
-    }
+
+        let data = await profileAPI.updateStatus(status)
+        if (data.resultCode == 0) {
+            dispatch(setStatus(status));
+        }
+        if (data.resultCode !== 0){
+            debugger
+            dispatch(thunkLetError(`${data.messages[0]}+1`))
+        }
 }
 
 export const savePhoto = (file) => async (dispatch) => {
@@ -133,12 +137,10 @@ export const sendForm = (aboutMe, fullName, github, vk, facebook, instagram, twi
             youtube: youtube,
             mainLink: mainLink,
         };
-    debugger
     //dispatch (updateProfile(aboutMe, contacts, lookingForAJobDescription, lookingForAJob))
     let data = await profileAPI.formData(formData);
     if (data.resultCode == 0) dispatch (updateProfile(aboutMe, contacts, lookingForAJobDescription, lookingForAJob))
     else {
-        debugger
         dispatch(stopSubmit('profeleData', {_error: data.messages[0]}));
        return Promise.reject(data.messages[0]);
     }

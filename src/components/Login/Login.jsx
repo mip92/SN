@@ -10,12 +10,13 @@ import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {Redirect} from "react-router-dom";
 
 
-const LoginForm = ({handleSubmit, error}) => {
+const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit}>
             {CreateField("Email", 'email', [requiredField], Input)}
             {CreateField("Password", 'password', [requiredField], Input, "password")}
             {CreateField(null, 'rememberMe', null, Input, "checkbox", "RememberMe")}
+            {captchaUrl && <div><img src={captchaUrl}/>{CreateField("captcha", 'captcha', [requiredField], Input)}</div>}
             {error && <div className={s.formSummmayError}>
                 {error}
             </div>}
@@ -32,7 +33,7 @@ const LoginReduxForm = reduxForm({
 })(LoginForm)
 const Login = (props) => {
     const onSubmit = (formData) => {
-        props.LoginAC(formData.email, formData.password, formData.rememberMe)
+        props.LoginAC(formData.email, formData.password, formData.rememberMe, formData.captcha)
         console.log(formData)
     }
     if (props.isAuth) {
@@ -40,13 +41,14 @@ const Login = (props) => {
     } else return (
         <div>
             <h1>Login</h1>
-            <LoginReduxForm onSubmit={onSubmit}/>
+            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
         </div>
     )
 }
 
 let LoginRedirectComponent = withAuthRedirect(Login)
 let mapStateToProps = (state) => ({
+    captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth,
 })
 export default connect(mapStateToProps, {LogoutAC, LoginAC})(Login);

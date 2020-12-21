@@ -1,0 +1,7 @@
+.current {
+    color: red;
+    cursor: pointer;
+}
+.notActive{
+    cursor: pointer;
+}

@@ -8,7 +8,6 @@ import {connect} from "react-redux";
 import {sendForm} from "../../../redux/profileReducer";
 
 const ProfileForm = ({onSubmit, profile, isOwner, handleSubmit, error}) => {
-    debugger
     return (
         <form onSubmit={handleSubmit}>
             <div>
@@ -28,11 +27,10 @@ const ProfileForm = ({onSubmit, profile, isOwner, handleSubmit, error}) => {
                     <b>Looking for a jobe</b> <span>{CreateFieldForProfile(null, 'lookingForAJob', null, Input, "checkbox",profile.lookingForAJob)}</span>{/*{profile.lookingForAJob ? "да" : "нет"}*/}
                 </div>
                 <div>
-                    {profile.lookingForAJob ?
-                        <div><b>A Job Description</b> <span>{CreateFieldForProfile(`lookingForAJobDescription`,
+                    {<div><b>A Job Description</b> <span>{CreateFieldForProfile(`lookingForAJobDescription`,
                             `lookingForAJobDescription`,
                             null, Input,
-                            'text', profile.lookingForAJobDescription, profile.lookingForAJobDescription)}</span></div> : ''}
+                            'text','', 'profile.lookingForAJobDescription')}</span></div>}
                 </div>
 
             </div>

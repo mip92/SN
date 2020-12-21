@@ -8,13 +8,12 @@ import ProfileDataForm from "./ProfileDataForm";
 
 
 const ProfileInfo = ({isOwner, profile, status, updateStatus, savePhoto}) => {
+    debugger
     let [editMode, setEditMode] = useState(false)
     let activateMode = () => {
-        debugger
         setEditMode(true);
     }
     let deActivateMode = () => {
-        debugger
         setEditMode(false);
     }
     if (profile == null || profile == undefined) {
@@ -41,7 +40,7 @@ const ProfileInfo = ({isOwner, profile, status, updateStatus, savePhoto}) => {
     </div>
 }
 const ProfileData = ({profile, isOwner, activateMode}) => {
-
+debugger
     return (
         <div>
 
