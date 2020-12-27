@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{317:function(n,t,a){"use strict";a.r(t);a(0);var e=a(133),c=a(147),o=a(12),i=a(77),u=a(8);t.default=Object(u.d)(Object(o.b)(function(n){return{state:n.dialogsPage}},function(n){return{addDialog:function(t){n(Object(e.a)(t))}}}),i.a)(c.a)}}]);
-//# sourceMappingURL=4.e9006db5.chunk.js.map
