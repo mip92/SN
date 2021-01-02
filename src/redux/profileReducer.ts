@@ -149,7 +149,6 @@ export const updateStatus = (status: string) => async (dispatch: any) => {
             dispatch(setStatus(status));
         }
         if (data.resultCode !== 0){
-            debugger
             dispatch(thunkLetError(`${data.messages[0]}+1`))
         }
 }

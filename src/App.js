@@ -22,7 +22,6 @@ const ProfileContainer = React.lazy(() => import("./components/Profile/ProfileCo
 
 class App extends React.Component {
     catchAllUnhandledErrors=(reason)=>{
-        //debugger
         //letError(reason.reason)
     }
     componentDidMount() {
@@ -46,7 +45,7 @@ class App extends React.Component {
                         <Route exact path="/" render={withSuspense(ProfileContainer)}/>
                         <Route path="/dialogs" render={withSuspense(DialogsContainer)}/>
                         <Route path="/profile/:userId?" render={withSuspense(ProfileContainer)}/>
-                        <Route path="/users" render={() => <UsersContainer/>}/>
+                        <Route path="/users" render={() => <UsersContainer pageTitle ="Самураи"/>}/>
                         <Route path="/login" render={() => <Login/>}/>
                         <Route path="/music" render={() => <Music/>}/>
                         <Route path="/news" render={() => <News/>}/>

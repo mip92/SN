@@ -1,3 +1,5 @@
+import {SetAuthUserDataType, SetUserSmallPhotoType} from "./authReducer";
+
 const ADD_MESSAGE = "ADD-MESSAGE";
 type addMessageActionCreatorType={
     type: typeof ADD_MESSAGE;
@@ -44,7 +46,7 @@ let initialState = {
 };
 export type initialStateType = typeof initialState;
 
-export const dialogsReducer = (state = initialState, action: any): initialStateType => {
+export const dialogsReducer = (state = initialState, action: ActionsTypes): initialStateType => {
     //let stateCopy= JSON.parse(JSON.stringify(state))
     switch (action.type) {
         case ADD_MESSAGE: {
@@ -58,6 +60,7 @@ export const dialogsReducer = (state = initialState, action: any): initialStateT
             return state;
     }
 }
+type ActionsTypes =addMessageActionCreatorType;
 
 export const addMessageActionCreator = (text: string):addMessageActionCreatorType => {
     return {

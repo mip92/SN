@@ -21,8 +21,37 @@ import {
     getNumberChange,
     getPageSize, getTotalUsersCount, getUsersSuperSelector,
 } from "../../redux/usersSelectors";
+import {UsersType} from "../../types/types";
+import {AppStateType} from "../../redux/reduxstore";
 
-class UsersAPIComponent extends React.Component {
+type MapStatePropsType={
+    totalUsersCount: number;
+    pageSize: number;
+    users: Array<UsersType>;
+    currentPage: number;
+    isFetching: boolean;
+    followingInProgress: Array<number>;
+    numberChange: number;
+}
+type MapDispatchPropsType={
+    setCurrentPage:(pageNumber: number)=>void;
+    searchNumber: ()=>void;
+    requestUsers: (currentPag: number, pageSize: number)=>void;
+    deleteUser: (arg0: number)=>void;
+    postUser: (arg0: number)=>void;
+    onNumberChange: (arg0: number)=>void
+    setTotalUsersCount: (arg0: number)=>void;
+    toggleIsFetching: (arg0: boolean)=>void;
+    toggleIsFetchingProgress: any;
+    setUsers: any;
+}
+type OwnPropsType= {
+    pageTitle: string;
+    pageNumber: number;
+}
+type PropsType=MapStatePropsType & MapDispatchPropsType & OwnPropsType
+
+class UsersAPIComponent extends React.Component<PropsType> {
     /*constructor(props) {
         super(props);
         }
@@ -32,13 +61,12 @@ class UsersAPIComponent extends React.Component {
         requestUsers(currentPage, pageSize);
     }
 
-    onPageChanged = (pageNumber) => {
+    onPageChanged = (pageNumber: number) => {
         let {setCurrentPage, requestUsers, pageSize} = this.props
         setCurrentPage(pageNumber);
         requestUsers(pageNumber, pageSize);
     }
-    onNumberChange = (e) => {
-        let {onNumberChange}=this.props
+    onNumberChange = (e: any) => {
         let number = e.target.value;
         onNumberChange(number);
     };
@@ -52,21 +80,22 @@ class UsersAPIComponent extends React.Component {
     render() {
         return <>
             {this.props.isFetching ? <Preloader/> : null}
+            <h3>{this.props.pageTitle}</h3>
             <Users
                 totalUsersCount={this.props.totalUsersCount}
                 pageSize={this.props.pageSize}
                 currentPage={this.props.currentPage}
                 onPageChanged={this.onPageChanged}
-                searchNumber={this.searchNumber}
-                onNumberChange={this.onNumberChange}
-                numberChange={this.props.numberChange}
+                //searchNumber={this.searchNumber}
+               // onNumberChange={this.onNumberChange}
+                //numberChange={this.props.numberChange}
                 users={this.props.users}
-                unFollow={this.props.unFollow}
-                follow={this.props.follow}
+              // unFollow={this.props.unFollow}
+               //follow={this.props.follow}
                 followingInProgress={this.props.followingInProgress}
-                toggleIsFetchingProgress={this.props.toggleIsFetchingProgress}
-                deleteUser={this.props.deleteUser}
-                postUser={this.props.postUser}
+                //toggleIsFetchingProgress={this.props.toggleIsFetchingProgress}
+                deleteUser={()=>this.props.deleteUser}
+                postUser={()=>this.props.postUser}
             />
         </>
     }
@@ -83,7 +112,7 @@ class UsersAPIComponent extends React.Component {
         followingInProgress: state.usersPage.followingInProgress,
     }
 }*/
-let mapStateToProps = (state) => {
+let mapStateToProps = (state: AppStateType): MapStatePropsType => {
     return {
         totalUsersCount: getTotalUsersCount(state),
         pageSize: getPageSize(state),
@@ -104,11 +133,14 @@ const UsersContainer = connect(mapStateToProps, {
 
 //export default UsersContainer;
 
+
+
 export default compose(
-    connect(mapStateToProps, {
-        follow, unFollow, setUsers, setCurrentPage, setTotalUsersCount,
-        onNumberChange, searchNumber, toggleIsFetching, toggleIsFetchingProgress,
-        requestUsers, deleteUser, postUser
+    //TStateProps={}, TDispatchProps={}, TOwnProps={}, State= DefaultRootState
+    connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
+        /*follow, unFollow,*/ setUsers, setCurrentPage, setTotalUsersCount, searchNumber, toggleIsFetching, toggleIsFetchingProgress,
+        requestUsers, deleteUser, postUser, onNumberChange
     }),
    // withAuthRedirect,
+
 )(UsersAPIComponent)

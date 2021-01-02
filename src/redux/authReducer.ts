@@ -1,7 +1,9 @@
 import {authAPI, profileAPI, securityAPI} from "../api/api";
-import {setStatus} from "./profileReducer";
 
 import {stopSubmit} from "redux-form";
+import {Dispatch} from "redux";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "./reduxstore";
 
 const SET_USER_DATA = "auth/SET-USER-DATA";
 const SET_USER_SMALL_PHOTO = "auth/SET-USER-SMALL-PHOTO";
@@ -25,7 +27,7 @@ let initialState: InitialStateType = {
     captchaUrl: null,
 };
 
-export const authReducer = (state = initialState, action: any): InitialStateType => {
+export const authReducer = (state = initialState, action: ActionsTypes): InitialStateType => {
     switch (action.type) {
 
         case SET_USER_DATA:
@@ -48,7 +50,9 @@ export const authReducer = (state = initialState, action: any): InitialStateType
     }
 }
 
-type SetAuthUserDataType = {
+type ActionsTypes =SetAuthUserDataType| GetCaptchaUrlSuccessType| SetUserSmallPhotoType;
+
+export type SetAuthUserDataType = {
     type: typeof SET_USER_DATA;
     data: {
         userId: number| null;
@@ -67,7 +71,7 @@ type GetCaptchaUrlSuccessType = {
 export const getCaptchaUrlSuccess = (captchaUrl: string): GetCaptchaUrlSuccessType => {
     return {type: GET_CAPTCHA_URL_SUCCESS, captchaUrl}
 };
-type SetUserSmallPhotoType = {
+export type SetUserSmallPhotoType = {
     type: typeof SET_USER_SMALL_PHOTO;
     smallPhoto: string;
 }
@@ -92,7 +96,10 @@ type thirdDataType = {
      resultCode: number;
 }
 
-export const authMe = () => (dispatch: any) => {
+
+type CurrentDispatchType = Dispatch<ActionsTypes>;
+type ThunkActionType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>;
+export const authMe = () => (dispatch: CurrentDispatchType) => {
     let id: number;
     let login: string;
     let email: string;
@@ -109,27 +116,27 @@ export const authMe = () => (dispatch: any) => {
         })
     })
 };
-export const LoginAC = (email: string, password: string, rememberMe: boolean, captcha: string) => async (dispatch: any) => {
+export const LoginAC = (email: string, password: string, rememberMe: boolean, captcha: string): ThunkActionType  => async (dispatch) => {
     let data = await authAPI.login(email, password, rememberMe, captcha);
     if (data.resultCode == 0) dispatch(authMe());
 
     else {
         if (data.resultCode == 10) {
-            dispatch(getCaptchaUrl())
+            await dispatch(getCaptchaUrl())
         }
         let message = data.messages.length > 0 ? data.messages[0] : "some error";
-        dispatch(stopSubmit('login', {_error: message}));
+        await dispatch(<SetAuthUserDataType | GetCaptchaUrlSuccessType | SetUserSmallPhotoType>stopSubmit('login', {_error: message}));
     }
 };
 
-export const getCaptchaUrl = () => async (dispatch: any) => {
-    let responsee = await securityAPI.getCaptchaURL();
-    let captcha = responsee.url;
+export const getCaptchaUrl = () => async (dispatch: CurrentDispatchType) => {
+    let response = await securityAPI.getCaptchaURL();
+    let captcha = response.url;
     dispatch(getCaptchaUrlSuccess(captcha));
 };
 
-export const LogoutAC = () => async (dispatch:any) => {
-    let data = await authAPI.logout().then((data: thirdDataType) => {
+export const LogoutAC = () => async (dispatch:CurrentDispatchType) => {
+    await authAPI.logout().then((data: thirdDataType) => {
         if (data.resultCode == 0) dispatch(setAuthUserData(null, null, null, false));
     });
 };

@@ -44,6 +44,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@types/react-redux": "^7.1.14",
     "gh-pages": "^3.1.0"
   }
 }

@@ -85,10 +85,8 @@ export const profileAPI = {
         );
     },
     formData(formData) {
-        debugger
         return instance.put(`/profile`,formData)
             .then(response => {
-                debugger
                 return response.data
             });
     },

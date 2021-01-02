@@ -1,6 +1,9 @@
-import {authMe, setAuthUserData, setUserSmallPhoto} from "./authReducer";
+import {setAuthUserData, SetAuthUserDataType, setUserSmallPhoto, SetUserSmallPhotoType} from "./authReducer";
 import {authAPI, profileAPI} from "../api/api";
-import {constants} from "os";
+//import {constants} from "os";
+//import {constants} from "os";
+//import {AppStateType} from "./reduxstore";
+import {Dispatch} from "redux";
 
 const INITIALIZED_SUCCESS = "INITIALIZED-SUCCESS";
 const ER = 'ERROR';
@@ -14,10 +17,9 @@ let initialState: InitialStateType = {
     globalError: "",
 };
 
-export const appReducer = (state: InitialStateType = initialState, action: any): InitialStateType => {
+export const appReducer = (state: InitialStateType = initialState, action: ActionsTypes): InitialStateType => {
     switch (action.type) {
         case ER:
-            debugger
             return {
                 ...state,
                 globalError: action.error,
@@ -31,24 +33,29 @@ export const appReducer = (state: InitialStateType = initialState, action: any):
             return state;
     }
 }
+
+type ActionsTypes =InitializedSuccessActionType | letErrorActionType| SetAuthUserDataType | SetUserSmallPhotoType;
+
 type InitializedSuccessActionType = { type: typeof INITIALIZED_SUCCESS }
 
 export const initializedSuccess = (): InitializedSuccessActionType => {
     return {type: INITIALIZED_SUCCESS}
 };
-export const letError = (error: any) => {
-    debugger
-    ////////////////////////////////////////////////////alert(error)
+type letErrorActionType = { type: typeof ER; error: string }
+export const letError = (error: string):letErrorActionType => {
     return {
         type: ER,
         error: error
     }
 };
-export const thunkLetError = (error: any) => (dispatch: any) => {
-    debugger
+
+//type getStateType = () => AppStateType;
+type CurrentDispatchType = Dispatch<ActionsTypes>;
+
+export const thunkLetError = (error: string) => (dispatch: CurrentDispatchType) => {
     dispatch(letError(error))
     setTimeout(() => {
-        dispatch(letError(null))
+        dispatch(letError(''))
     }, 5000)
 }
 
@@ -56,8 +63,8 @@ type FirstDataType = {
     resultCode: number;
     data: {
         id: number;
-        login: any;
-        email: any;
+        login: string;
+        email: string;
     };
 }
 type SecondDataType = {
@@ -65,7 +72,7 @@ type SecondDataType = {
         small: string;
     }
 }
-export const initializeApp = () => (dispatch: any) => {
+export const initializeApp = () => (dispatch: CurrentDispatchType) => {
     let id: number;
     let login;
     let email;

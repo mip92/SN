@@ -37,6 +37,7 @@ const Login = (props) => {
         console.log(formData)
     }
     if (props.isAuth) {
+
         return <Redirect to='/profile'/>
     } else return (
         <div>
