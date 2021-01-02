@@ -18,20 +18,20 @@ const Paginator: React.FC<PropsType> = (props) => {
         pages.push(i)
     }
     let thispage = 1;
-
-    let [startOfBlock, setStartOfBlock] = useState<number|0>( 0)
+    let StepsInTheBlock=10;
+    let [startOfBlock, setStartOfBlock] = useState<number>( 0)
     let [endOfBlock, setEndOfBlock] = useState( 10)
     let [someBlock, editSomeBlock] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     if (startOfBlock==0) setStartOfBlock(1)
     let next = () => {
-        setEndOfBlock(endOfBlock += endOfBlock);
-        setStartOfBlock(startOfBlock += endOfBlock)
+        setEndOfBlock(endOfBlock += StepsInTheBlock);
+        setStartOfBlock(startOfBlock += StepsInTheBlock)
         let newPages = pages.filter(item => item <= endOfBlock && item >= startOfBlock);
         editSomeBlock(newPages);
     }
     let prev = () => {
-        setEndOfBlock(endOfBlock -= 10);
-        setStartOfBlock(startOfBlock -= 10)
+        setEndOfBlock(endOfBlock -= StepsInTheBlock);
+        setStartOfBlock(startOfBlock -= StepsInTheBlock)
         let newPages = pages.filter(item => item <= endOfBlock && item >= startOfBlock);
         editSomeBlock(newPages);
     }
