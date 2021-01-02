@@ -1,6 +1,8 @@
 
 import React from "react";
 import {addPostActionCreator, deletePost, profileReducer} from "./profileReducer";
+import {PostsType} from "../types/types";
+
 let state= {
     posts: [
         {id: 1, post: 'hi, how are you', likesCount: 1},
@@ -9,7 +11,7 @@ let state= {
 }
 it('length of posts should incremented', () => {
     let action=addPostActionCreator("текст нового поста");
-    let newState = profileReducer(state,action)
+    let newState  = profileReducer(state,action);
     expect(newState.posts.length).toBe(3);
 });
 

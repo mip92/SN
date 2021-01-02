@@ -41,7 +41,7 @@ type InitializedSuccessActionType = { type: typeof INITIALIZED_SUCCESS }
 export const initializedSuccess = (): InitializedSuccessActionType => {
     return {type: INITIALIZED_SUCCESS}
 };
-type letErrorActionType = { type: typeof ER; error: string }
+export type letErrorActionType = { type: typeof ER; error: string }
 export const letError = (error: string):letErrorActionType => {
     return {
         type: ER,

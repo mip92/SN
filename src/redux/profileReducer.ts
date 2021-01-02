@@ -1,14 +1,18 @@
 import {authAPI, profileAPI} from "../api/api";
-import {stopSubmit} from "redux-form";
-import {thunkLetError} from "./appReducer";
+import {FormAction, stopSubmit} from "redux-form";
 import {PhotosType, PostsType, ProfileType} from "../types/types";
+import {SetAuthUserDataType, SetUserSmallPhotoType} from "./authReducer";
+import {Dispatch} from "redux";
+import {ThunkAction} from "redux-thunk";
+import {AppStateType} from "./reduxstore";
+import {letErrorActionType, thunkLetError} from "./appReducer";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET-USER-PROFILE";
 const SET_STATUS = "SET-STATUS";
 const DELETE_POST = "DELETE-POST";
-const SAVE_PHOTO_SUCCESS = "SAVE-PHOTO-SUCCESS"
-const UPDATE_PROFILE = "UPDATE-PROFILE"
+const SAVE_PHOTO_SUCCESS = "SAVE-PHOTO-SUCCESS";
+const UPDATE_PROFILE = "UPDATE-PROFILE";
 
 let initialState = {
     posts: [
@@ -21,7 +25,7 @@ let initialState = {
 };
 export type initialStateType = typeof initialState;
 
-export const profileReducer = (state = initialState, action: any):initialStateType => {
+export const profileReducer = (state = initialState, action: ActionsTypes):initialStateType => {
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
@@ -57,7 +61,8 @@ export const profileReducer = (state = initialState, action: any):initialStateTy
     }
     return state;
 }
-
+type ActionsTypes =AddPostActionCreatorType| DeletePostType|SetStatusType|SetUserProfileType|UpdateProfileType|
+    SavePhotoSuccessType| letErrorActionType;
 type AddPostActionCreatorType = {
     type: typeof ADD_POST;
     text: string;
@@ -133,27 +138,32 @@ const savePhotoSuccess = (photos: PhotosType): SavePhotoSuccessType => {
     return {type: SAVE_PHOTO_SUCCESS, photos}
 };
 
-export const getUserProfile = (userId: number) => async (dispatch : any) => {
+type CurrentDispatchType = Dispatch<ActionsTypes>;
+type ThunkActionType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes | FormAction>;
+
+
+export const getUserProfile = (userId: number): ThunkActionType => async (dispatch) => {
     let data = await profileAPI.getUser(userId)
     dispatch(setUserProfile(data));
 }
-export const getStatus = (userId: number) => async (dispatch: any) => {
+export const getStatus = (userId: number): ThunkActionType => async (dispatch) => {
     let data = await profileAPI.getStatus(userId)
-    if (data == null || data == "") dispatch(setStatus('Шалом'));
+    if (data == null || data == "") dispatch(setStatus('У меня нет статуса'));
     else dispatch(setStatus(data));
 }
-export const updateStatus = (status: string) => async (dispatch: any) => {
+export const updateStatus = (status: string): ThunkActionType => async (dispatch) => {
 
         let data = await profileAPI.updateStatus(status)
         if (data.resultCode == 0) {
             dispatch(setStatus(status));
         }
         if (data.resultCode !== 0){
-            dispatch(thunkLetError(`${data.messages[0]}+1`))
+
+            dispatch(thunkLetError(`${data.messages[0]}`))
         }
 }
 
-export const savePhoto = (file: any) => async (dispatch: any) => {
+export const savePhoto = (file: any): ThunkActionType => async (dispatch) => {
     let data = await profileAPI.savePhoto(file)
     if (data.resultCode == 0) {
         dispatch(savePhotoSuccess(data.data.photos.large));
@@ -171,7 +181,7 @@ export const sendForm = (aboutMe: string,
                          youtube: string,
                          mainLink: string,
                          lookingForAJobDescription: string,
-                         lookingForAJob: boolean) => async (dispatch: any) => {
+                         lookingForAJob: boolean): ThunkActionType => async (dispatch) => {
     lookingForAJob==undefined ? lookingForAJob=false : lookingForAJob=true
     let formData = {
         aboutMe: aboutMe,
