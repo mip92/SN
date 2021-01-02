@@ -31,7 +31,7 @@ const ProfileInfo = ({isOwner, profile, status, updateStatus, savePhoto}) => {
             <img src={profile.photos.large != null ? profile.photos.large : userPhoto}
                  className={s.userPhoto}/>
             {!!isOwner ? <input type='file' onChange={onMainPhotoSelected}/> : ""}
-            <ProfileStatusWithHooks status={status} updateStatus={updateStatus}/> {/*{props.profile.aboutMe}*/}
+            <ProfileStatusWithHooks isOwner={isOwner} status={status} updateStatus={updateStatus}/> {/*{props.profile.aboutMe}*/}
             {editMode
                 ?<ProfileDataForm initialValues={profile} /*profile={profile}*/ deActivateMode={deActivateMode} isOwner={isOwner}/>
                 : <ProfileData  profile={profile} isOwner={isOwner} activateMode={activateMode}/>}
