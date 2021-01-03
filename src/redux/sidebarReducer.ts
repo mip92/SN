@@ -1,3 +1,5 @@
+import {letErrorActionType} from "./appReducer";
+
 const ADD_THREE_FRIENDS = "ADD-THREE-FRIENDS";
 type FriendsType={
     id: number | null,
@@ -39,7 +41,7 @@ for (let i = initialState.friends.length; i > 3; i--) {
     initialState.friends.splice(getRandomArbitrary(0, initialState.friends.length - 1), 1);
 }
 
-export const sidebarReducer = (state=initialState, action: any): initialStateType => {
+export const sidebarReducer = (state=initialState, action: ActionsTypes): initialStateType => {
     switch (action.type) {
         case ADD_THREE_FRIENDS: {
             return state;
@@ -47,6 +49,8 @@ export const sidebarReducer = (state=initialState, action: any): initialStateTyp
         default: return state;
     }
 }
+type ActionsTypes =AddThreeFriendsActionCreatorType;
+
 type AddThreeFriendsActionCreatorType = {
     type: typeof ADD_THREE_FRIENDS;
 }

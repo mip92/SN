@@ -1,4 +1,5 @@
-import * as axios from "axios";
+import axios, {AxiosResponse} from "axios";
+import {FormDataType, GetUserType} from "../types/types";
 
 const instance = axios.create({
     withCredentials: true,
@@ -7,6 +8,7 @@ const instance = axios.create({
         "API-KEY": "aec09892-749d-4c42-b208-544b7f308b49"
     },
 });
+
 export const userAPI = {
     getUsers(currentPage = 1, pageSize = 10) {
         return instance.get(`users?page=${currentPage}&count=${pageSize}`)
@@ -16,13 +18,13 @@ export const userAPI = {
     }
 }
 export const followAPI = {
-    deleteUser(id) {
+    deleteUser(id: number) {
         return instance.delete(`follow/${id}`)
             .then(response => {
                 return response.data
             });
     },
-    postUser(id) {
+    postUser(id: number) {
         return instance.post(`follow/${id}`)
             .then(response => {
                 return response.data
@@ -30,52 +32,98 @@ export const followAPI = {
     },
 }
 
+export enum ResultCodesEnum {
+    Success = 0,
+    Error = 1,
+    CaptchaIsRequired = 10,
+}
+
+type AuthMeType = {
+    resultCode: number,
+    messages: Array<string>,
+    data: {
+        id: number,
+        email: string,
+        login: string
+    }
+}
+type LoginType = {
+    resultCode: number,
+    messages: Array<string>,
+    data: {
+        userId: number,
+    }
+}
+type logoutType = {
+    resultCode: number,
+    messages: Array<string>,
+    data: {}
+}
+
 export const authAPI = {
     authMe() {
-        return instance.get(`auth/me`)
+        return instance.get<AuthMeType>(`auth/me`)
             .then(response => {
                 return response.data
             });
     },
-    login(email, password, rememberMe = false, captcha=null) {
-        return instance.post(`auth/login`, {email, password, rememberMe, captcha})
+    login(email: string,
+          password: string,
+          rememberMe = false,
+          captcha: string | null = null) {
+        return instance.post<LoginType>(`auth/login`, {email, password, rememberMe, captcha})
             .then(response => {
                 return response.data
             });
     },
     logout() {
-        return instance.delete(`auth/login`)
+        return instance.delete<logoutType>(`auth/login`)
             .then(response => {
                 return response.data
             });
     }
+}
+type updateStatus = {
+    resultCode: number,
+    messages: Array<string>,
+    data: { status: string }
+}
+type savePhotoType = {
+    resultCode: number,
+    messages: Array<string>,
+    data: {
+        photos: {
+            small: string | null,
+            large: string | null,
+        }
+    }
 
 }
-export const profileAPI = {
-    getUser(userId) {
-        return instance.get(`profile/` + userId)
-            .then(response => {
-                return response.data
-            });
-    },
-    getStatus(userId) {
 
-        return instance.get(`profile/status/${userId}`)
+export const profileAPI = {
+    getUser(userId: number) {
+        return instance.get<GetUserType>(`profile/` + userId)
             .then(response => {
                 return response.data
             });
     },
-    updateStatus(status) {
-        return instance.put(`profile/status/`, {status: status})
+    getStatus(userId: number) {
+        return instance.get<string>(`profile/status/${userId}`)
+            .then(response => {
+                return response.data
+            });
+    },
+    updateStatus(status: string) {
+        return instance.put<updateStatus>(`profile/status/`, {status: status})
             .then(response => {
                     return response.data
                 }
             );
     },
-    savePhoto(photoFile) {
+    savePhoto(photoFile: File) {
         const formData = new FormData();
         formData.append("image", photoFile)
-        return instance.put(`/profile/photo`, formData, {
+        return instance.put<savePhotoType>(`/profile/photo`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
@@ -84,13 +132,13 @@ export const profileAPI = {
             }
         );
     },
-    formData(formData) {
-        return instance.put(`/profile`,formData)
+
+    formData(formData: FormDataType) {
+        return instance.put(`/profile`, formData)
             .then(response => {
                 return response.data
             });
     },
-
 }
 export const securityAPI = {
     getCaptchaURL() {

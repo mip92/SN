@@ -25,7 +25,11 @@
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Paginator/Paginator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/authReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/profileReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/profileReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/sidebarReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/sidebarReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +293,8 @@
       <workItem from="1609508629565" duration="1317000" />
       <workItem from="1609592986711" duration="2270000" />
       <workItem from="1609595281592" duration="2980000" />
-      <workItem from="1609598425824" duration="3789000" />
+      <workItem from="1609598425824" duration="4402000" />
+      <workItem from="1609662705223" duration="12574000" />
     </task>
     <task id="LOCAL-00002" summary="add app">
       <created>1607022171192</created>

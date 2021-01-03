@@ -48,7 +48,8 @@ export const profileReducer = (state = initialState, action: ActionsTypes):initi
             return {...state, status: action.status}
         }
         case SAVE_PHOTO_SUCCESS: {
-            return {...state, profile: {...state.profile, photos: action.photos} as ProfileType}
+            return {...state, profile: {...state.profile, photos:{...state.profile?.photos, large:action.large,
+                    small:action.small} } as ProfileType}
         }
         case UPDATE_PROFILE: {
             return {...state, profile: {...state.profile, aboutMe:action.aboutMe,
@@ -114,6 +115,26 @@ type UpdateProfileType = {
     };
     lookingForAJobDescription: string;
     lookingForAJob: boolean;
+    photos:{
+        small: null | string,
+        large: null| string,
+    }
+}
+type UpdateProfileTypeWithoutPhoto = {
+    type: typeof UPDATE_PROFILE;
+    aboutMe: string;
+    contacts:{
+        github: string;
+        vk: string;
+        facebook: string;
+        instagram: string;
+        twitter: string;
+        website: string;
+        youtube: string;
+        mainLink: string;
+    };
+    lookingForAJobDescription: string;
+    lookingForAJob: boolean;
 }
 const updateProfile = (aboutMe: string,
                        contacts:{
@@ -127,15 +148,17 @@ const updateProfile = (aboutMe: string,
                            mainLink: string;
                        },
                        lookingForAJobDescription: string,
-                       lookingForAJob: boolean): UpdateProfileType => {
+                       lookingForAJob: boolean):  UpdateProfileTypeWithoutPhoto => {
     return {type: UPDATE_PROFILE, aboutMe, contacts, lookingForAJobDescription, lookingForAJob}
 };
 type SavePhotoSuccessType = {
     type: typeof SAVE_PHOTO_SUCCESS;
-    photos: PhotosType;
+    small: string| null;
+    large:string| null;
 }
-const savePhotoSuccess = (photos: PhotosType): SavePhotoSuccessType => {
-    return {type: SAVE_PHOTO_SUCCESS, photos}
+const savePhotoSuccess = (small:string | null, large:string| null): SavePhotoSuccessType => {
+    debugger
+    return {type: SAVE_PHOTO_SUCCESS, small, large}
 };
 
 type CurrentDispatchType = Dispatch<ActionsTypes>;
@@ -164,9 +187,12 @@ export const updateStatus = (status: string): ThunkActionType => async (dispatch
 }
 
 export const savePhoto = (file: any): ThunkActionType => async (dispatch) => {
-    let data = await profileAPI.savePhoto(file)
-    if (data.resultCode == 0) {
-        dispatch(savePhotoSuccess(data.data.photos.large));
+    debugger
+    let r = await profileAPI.savePhoto(file)
+    debugger
+    if (r.resultCode==0) {
+        debugger
+        dispatch(savePhotoSuccess(r.data.photos.small, r.data.photos.large));
     }
 }
 
