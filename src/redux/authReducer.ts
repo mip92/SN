@@ -1,4 +1,4 @@
-import {authAPI, profileAPI, ResultCodesEnum, securityAPI} from "../api/api";
+import {authAPI, profileAPI, ResultCodeForCaptcha, ResultCodesEnum, securityAPI} from "../api/api";
 
 import {stopSubmit} from "redux-form";
 import {Dispatch} from "redux";
@@ -121,7 +121,7 @@ export const LoginAC = (email: string, password: string, rememberMe: boolean, ca
     if (data.resultCode == 0) dispatch(authMe());
 
     else {
-        if (data.resultCode == ResultCodesEnum.CaptchaIsRequired) {
+        if (data.resultCode == ResultCodeForCaptcha.CaptchaIsRequired) {
             await dispatch(getCaptchaUrl())
         }
         let message = data.messages.length > 0 ? data.messages[0] : "some error";

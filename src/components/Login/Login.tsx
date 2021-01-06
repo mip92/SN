@@ -1,6 +1,6 @@
 import React from 'react';
 import s from '../common/FormControls/FormControls.module.css';
-import {Field, reduxForm} from "redux-form";
+import {Field, InjectedFormProps, reduxForm} from "redux-form";
 import {Input, CreateField} from "../common/FormControls/FormControls";
 import {requiredField} from "../../utils/validators/validators";
 import {connect} from "react-redux";
@@ -8,15 +8,18 @@ import {getStatus, getUserProfile, updateStatus} from "../../redux/profileReduce
 import {LoginAC, LogoutAC} from "../../redux/authReducer";
 import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {Redirect} from "react-router-dom";
+import {AppStateType} from "../../redux/reduxstore";
+import {compose} from "redux";
 
 
-const LoginForm = ({handleSubmit, error, captchaUrl}) => {
+const LoginForm: React.FC<InjectedFormProps<FormDataType, OwnPropsType> & OwnPropsType> = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit}>
             {CreateField("Email", 'email', [requiredField], Input)}
             {CreateField("Password", 'password', [requiredField], Input, "password")}
             {CreateField(null, 'rememberMe', null, Input, "checkbox", "RememberMe")}
-            {captchaUrl && <div><img src={captchaUrl}/>{CreateField("captcha", 'captcha', [requiredField], Input)}</div>}
+            {captchaUrl &&
+            <div><img src={captchaUrl}/>{CreateField("captcha", 'captcha', [requiredField], Input)}</div>}
             {error && <div className={s.formSummmayError}>
                 {error}
             </div>}
@@ -28,11 +31,34 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
 
     )
 }
-const LoginReduxForm = reduxForm({
+const LoginReduxForm = reduxForm<FormDataType, OwnPropsType>({
     form: "login"
 })(LoginForm)
-const Login = (props) => {
-    const onSubmit = (formData) => {
+
+
+type MapStatePropsType = {
+    captchaUrl: string | null,
+    isAuth: boolean,
+}
+type MapDispatchPropsType = {
+    LogoutAC: () => void,
+    LoginAC: (email: string,
+              password: string,
+              rememberMe: boolean,
+              captcha: string) => void,
+}
+type OwnPropsType = {
+    captchaUrl: string |null;
+}
+type PropsType = MapStatePropsType & MapDispatchPropsType & OwnPropsType;
+type FormDataType = {
+    email: string;
+    password: string;
+    rememberMe: boolean;
+    captcha: string;
+}
+const Login = (props: PropsType) => {
+    const onSubmit = (formData: FormDataType) => {
         props.LoginAC(formData.email, formData.password, formData.rememberMe, formData.captcha)
         console.log(formData)
     }
@@ -48,8 +74,12 @@ const Login = (props) => {
 }
 
 let LoginRedirectComponent = withAuthRedirect(Login)
-let mapStateToProps = (state) => ({
+let mapStateToProps = (state: AppStateType): MapStatePropsType => ({
     captchaUrl: state.auth.captchaUrl,
     isAuth: state.auth.isAuth,
 })
-export default connect(mapStateToProps, {LogoutAC, LoginAC})(Login);
+export default compose(
+    connect<MapStatePropsType, MapDispatchPropsType, OwnPropsType, AppStateType>(mapStateToProps, {
+        LogoutAC, LoginAC
+    })
+)(Login);
