@@ -15,11 +15,11 @@ import {compose} from "redux";
 const LoginForm: React.FC<InjectedFormProps<FormDataType, OwnPropsType> & OwnPropsType> = ({handleSubmit, error, captchaUrl}) => {
     return (
         <form onSubmit={handleSubmit}>
-            {CreateField("Email", 'email', [requiredField], Input)}
-            {CreateField("Password", 'password', [requiredField], Input, "password")}
-            {CreateField(null, 'rememberMe', null, Input, "checkbox", "RememberMe")}
+            {CreateField<LoginFormPropertiesType>("Email", 'email', [requiredField], Input, 'input')}
+            {CreateField<LoginFormPropertiesType>("Password", 'password', [requiredField], Input, "password", "password")}
+            {CreateField<LoginFormPropertiesType>(null, 'rememberMe', null, Input, "checkbox", "checkbox",)}
             {captchaUrl &&
-            <div><img src={captchaUrl}/>{CreateField("captcha", 'captcha', [requiredField], Input)}</div>}
+            <div><img src={captchaUrl}/>{CreateField<LoginFormPropertiesType>("captcha", 'captcha', [requiredField], Input, 'input')}</div>}
             {error && <div className={s.formSummmayError}>
                 {error}
             </div>}
@@ -51,12 +51,13 @@ type OwnPropsType = {
     captchaUrl: string |null;
 }
 type PropsType = MapStatePropsType & MapDispatchPropsType & OwnPropsType;
-type FormDataType = {
+export type FormDataType = {
     email: string;
     password: string;
     rememberMe: boolean;
     captcha: string;
 }
+type LoginFormPropertiesType=keyof FormDataType
 const Login = (props: PropsType) => {
     const onSubmit = (formData: FormDataType) => {
         props.LoginAC(formData.email, formData.password, formData.rememberMe, formData.captcha)

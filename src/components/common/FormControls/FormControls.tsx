@@ -35,17 +35,13 @@ const Input: React.FC<FormControlPropsType> =(props)=>{
 
     }
 
-
-type CreateFieldType = {
-    // placeholder:
-}
-const CreateField = (placeholder: string | null,
-                     name: string,
+function CreateField<LoginFormPropertiesType extends string> (placeholder: string | null,
+                     name: LoginFormPropertiesType,
                      validate: Array<FieldValidatorType> | null,
                      component: React.Component | string | React.FC<FormControlPropsType>,
-                     props={},
+                     props: string,
                      type?: string,
-                     text = "") => {
+                     text = ""){
     return (
         <div>
             <Field placeholder={placeholder ? placeholder : ''}
@@ -61,9 +57,9 @@ const CreateFieldForProfile = (placeholder: string | null,
                                name: string,
                                validate: Array<string>,
                                component: () => void,
-                               type: string,
+                               type?: string,
                                text = "",
-                               value: string) => {
+                               ) => {
     return (
         <span>
             <Field placeholder={placeholder ? placeholder : ''}
@@ -71,7 +67,7 @@ const CreateFieldForProfile = (placeholder: string | null,
                    name={name}
                    validate={validate}
                    type={type}
-                   value={value}
+                  //value={value}
             />{text}
         </span>
     )

@@ -28,13 +28,8 @@
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/FormControls/FormControls.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormControls/FormControls.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/authReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/authReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validators/validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validators/validators.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/FormControls/FormControls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/FormControls/FormControls.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +297,13 @@
       <workItem from="1609662705223" duration="14681000" />
       <workItem from="1609781104414" duration="9761000" />
       <workItem from="1609871090740" duration="5191000" />
-      <workItem from="1609956290497" duration="4416000" />
+      <workItem from="1609956290497" duration="5019000" />
+      <workItem from="1610011772860" duration="8112000" />
+      <workItem from="1610113981755" duration="1888000" />
+      <workItem from="1610189431036" duration="4526000" />
+      <workItem from="1610294011818" duration="635000" />
+      <workItem from="1610384883956" duration="67000" />
+      <workItem from="1610471981457" duration="661000" />
     </task>
     <task id="LOCAL-00002" summary="add app">
       <created>1607022171192</created>
